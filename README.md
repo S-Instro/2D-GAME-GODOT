@@ -59,5 +59,9 @@ Cultural Feasibility :- 
     ❖ 8GB (recommended) 
     ❖ 12GB and more for Best Experience.
     
-    <img src="image/Screenshot_20201120-095609.png" >
-
+ 
+![game](image/Screenshot_20201120-095609.png)
+![game](image/Screenshot_20201120-095642.png)
+![game](image/Screenshot_20201120-095650.png)
+![game](image/Screenshot_20201120-095659.png)
+![game](image/Screenshot_20201120-095703.png)
