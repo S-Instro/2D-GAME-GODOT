@@ -1,0 +1,174 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/montserrat_extrabold.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/749.jpg" type="Texture" id=2]
+[ext_resource path="res://auto/pngn/upgrade/btn.png" type="Texture" id=3]
+[ext_resource path="res://auto/pngn/btn/next.png" type="Texture" id=7]
+[ext_resource path="res://auto/pngn/btn/close.png" type="Texture" id=8]
+[ext_resource path="res://auto/pngn/pause/bg.png" type="Texture" id=9]
+[ext_resource path="res://assets/j.png" type="Texture" id=10]
+[ext_resource path="res://assets/coin.png" type="Texture" id=11]
+[ext_resource path="res://UI/coml.gd" type="Script" id=12]
+
+[sub_resource type="Animation" id=4]
+resource_name = "kk"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("bg:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.943395, 0.943395 ), Vector2( 0.843, 0.843 ) ]
+}
+
+[sub_resource type="DynamicFont" id=5]
+size = 60
+outline_color = Color( 0.227451, 0.839216, 0.65098, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 51
+font_data = ExtResource( 1 )
+
+[node name="levelcomp" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg2" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0.631373 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 85.0
+margin_bottom = 48.0
+rect_scale = Vector2( 0.957474, 0.957474 )
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="j" type="Sprite" parent="bg2"]
+position = Vector2( 250.66, 710.202 )
+scale = Vector2( 0.208988, 0.264366 )
+texture = ExtResource( 10 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.239216 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+autoplay = "kk"
+anims/kk = SubResource( 4 )
+
+[node name="bg" type="TextureRect" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 728.0
+margin_top = 416.0
+margin_right = -758.0
+margin_bottom = -318.0
+rect_scale = Vector2( 0.887465, 0.887465 )
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="for" type="Button" parent="ColorRect/bg"]
+margin_left = 228.96
+margin_top = 169.6
+margin_right = 364.96
+margin_bottom = 296.6
+icon = ExtResource( 7 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="clo" type="Button" parent="ColorRect/bg"]
+margin_left = 42.4
+margin_top = 169.6
+margin_right = 183.4
+margin_bottom = 296.6
+icon = ExtResource( 8 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn" type="TextureRect" parent="ColorRect/bg"]
+margin_left = -59.7204
+margin_top = -177.68
+margin_right = 492.28
+margin_bottom = 66.32
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nme" type="Label" parent="ColorRect/bg/btn"]
+margin_left = 76.6805
+margin_top = 58.9599
+margin_right = 500.68
+margin_bottom = 211.96
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.933333, 0.933333, 0.933333, 1 )
+text = "      Level
+	 completed"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="X" type="Label" parent="ColorRect/bg"]
+margin_left = 195.04
+margin_top = 93.28
+margin_right = 254.04
+margin_bottom = 153.28
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.933333, 0.933333, 0.933333, 1 )
+text = "X"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="Label" parent="ColorRect/bg"]
+margin_left = 246.0
+margin_top = 85.0
+margin_right = 365.0
+margin_bottom = 148.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.933333, 0.933333, 0.933333, 1 )
+text = " %s"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coin" type="Sprite" parent="ColorRect/bg"]
+position = Vector2( 144.16, 110.24 )
+scale = Vector2( 1.06, 1.06 )
+texture = ExtResource( 11 )
+[connection signal="pressed" from="ColorRect/bg/for" to="." method="_on_for_pressed"]
+[connection signal="pressed" from="ColorRect/bg/clo" to="." method="_on_clo_pressed"]

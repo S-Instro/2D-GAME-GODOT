@@ -1,0 +1,100 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://auto/pngn/btn/next.png" type="Texture" id=1]
+[ext_resource path="res://assets/coin.png" type="Texture" id=2]
+[ext_resource path="res://assets/montserrat_extrabold.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://screen/retry.tscn" type="PackedScene" id=4]
+[ext_resource path="res://screen/quit.tscn" type="PackedScene" id=5]
+[ext_resource path="res://screen/Title.tscn" type="PackedScene" id=6]
+[ext_resource path="res://auto/pngn/btn/close.png" type="Texture" id=7]
+[ext_resource path="res://auto/pngn/btn/restart.png" type="Texture" id=8]
+[ext_resource path="res://auto/pngn/pause/bg.png" type="Texture" id=9]
+[ext_resource path="res://UI/win.gd" type="Script" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 39
+font_data = ExtResource( 3 )
+
+[node name="win" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="win" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.239216 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="TextureRect" parent="win"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 640.0
+margin_top = 238.0
+margin_right = -645.0
+margin_bottom = -240.0
+rect_scale = Vector2( 0.957474, 0.957474 )
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="win/bg" instance=ExtResource( 6 )]
+margin_left = -267.368
+margin_top = 60.5761
+margin_right = 254.632
+margin_bottom = 177.576
+custom_colors/font_color = Color( 0.917647, 0.243137, 0.243137, 1 )
+text = "LEVEL  Completed"
+
+[node name="retry" parent="win/bg" instance=ExtResource( 4 )]
+margin_left = 83.5531
+margin_top = 367.634
+margin_right = 198.553
+margin_bottom = 473.634
+text = ""
+icon = ExtResource( 8 )
+expand_icon = true
+
+[node name="quit" parent="win/bg" instance=ExtResource( 4 )]
+margin_left = 259.015
+margin_top = 367.634
+margin_right = 374.015
+margin_bottom = 473.634
+text = ""
+icon = ExtResource( 7 )
+expand_icon = true
+script = null
+
+[node name="for" parent="win/bg" instance=ExtResource( 5 )]
+margin_left = 426.121
+margin_top = 367.634
+margin_right = 541.121
+margin_bottom = 473.634
+text = ""
+icon = ExtResource( 1 )
+expand_icon = true
+
+[node name="score" type="Label" parent="win/bg"]
+margin_left = 317.502
+margin_top = 210.972
+margin_right = 373.502
+margin_bottom = 258.972
+custom_fonts/font = SubResource( 1 )
+text = "%s"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coin" type="Sprite" parent="win/bg"]
+position = Vector2( 233.949, 227.682 )
+texture = ExtResource( 2 )
+[connection signal="pressed" from="win/bg/retry" to="win/bg/retry" method="_on_retry_pressed"]
+[connection signal="pressed" from="win/bg/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="win/bg/for" to="." method="_on_for_pressed"]

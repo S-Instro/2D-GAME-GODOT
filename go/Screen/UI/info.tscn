@@ -1,0 +1,283 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/BG.png" type="Texture" id=1]
+[ext_resource path="res://assets/Level1.tres" type="TileSet" id=2]
+[ext_resource path="res://touch button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/Player.png" type="Texture" id=4]
+[ext_resource path="res://assets/montserrat_extrabold.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://auto/pngn/settings/close_2.png" type="Texture" id=6]
+[ext_resource path="res://auto/pngn/clouds/1.png" type="Texture" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "h"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("touch button/VBoxContainer/left:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.006271, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -0.537739, 10.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("4/Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "click to move left" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("4:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.709804 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("4:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.609091, 0.452984 ), Vector2( 0.5, 0.33 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("touch button/VBoxContainer/right:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.000254538, -10.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("5:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.596078 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("5:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.33 ), Vector2( 0.609091, 0.452984 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("touch button/VBoxContainer/jump:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.173795, -0.21068 ), Vector2( 0.19, -0.191 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("6:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.686275 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("6:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.33 ), Vector2( 0.55, 0.43 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "r"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("touch button/VBoxContainer/right:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.000254538, -34.2, 17.2 ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 82
+outline_size = 4
+font_data = ExtResource( 5 )
+
+[node name="info" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BG" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1095.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 589833, 5, 0, 589834, 5, 0, 589835, 5, 0, 589836, 5, 0, 589837, 536870917, 0, 655367, 5, 0, 655368, 536870917, 0, 655369, 5, 0, 655370, 5, 0, 655371, 5, 0, 655372, 5, 0, 655373, 536870917, 0, 655374, 536870917, 0, 720896, 5, 0, 720897, 5, 0, 720898, 5, 0, 720899, 5, 0, 720900, 5, 0, 720901, 5, 0, 720902, 5, 0, 720903, 5, 0, 720904, 5, 0, 720905, 5, 0, 720906, 5, 0, 720907, 5, 0, 720908, 5, 0, 720909, 536870917, 0, 720910, 536870917, 0, 720911, 536870917, 0, 720925, 5, 0, 786432, 5, 0, 786433, 5, 0, 786434, 5, 0, 786435, 5, 0, 786436, 5, 0, 786437, 5, 0, 786438, 5, 0, 786439, 5, 0, 786440, 5, 0, 786441, 5, 0, 786442, 5, 0, 786443, 5, 0, 786444, 5, 0, 786445, 536870917, 0, 786446, 536870917, 0, 786447, 536870917, 0, 786448, 536870917, 0, 786449, 536870917, 0, 786460, 5, 0, 786461, 5, 0, 851968, 5, 0, 851969, 5, 0, 851970, 5, 0, 851971, 5, 0, 851972, 5, 0, 851973, 5, 0, 851974, 5, 0, 851975, 5, 0, 851976, 5, 0, 851977, 5, 0, 851978, 5, 0, 851979, 5, 0, 851980, 5, 0, 851981, 536870917, 0, 851982, 536870917, 0, 851983, 536870917, 0, 851984, 536870917, 0, 851985, 536870917, 0, 851986, 536870917, 0, 851987, 536870917, 0, 851991, 5, 0, 851992, 5, 0, 851993, 5, 0, 851994, 5, 0, 851995, 5, 0, 851996, 5, 0, 851997, 5, 0, 917504, 4, 0, 917505, 4, 0, 917506, 4, 0, 917507, 4, 0, 917508, 536870916, 0, 917509, 4, 0, 917510, 4, 0, 917511, 536870916, 0, 917512, 4, 0, 917513, 4, 0, 917514, 4, 0, 917515, 4, 0, 917516, 4, 0, 917517, 4, 0, 917518, 4, 0, 917519, 4, 0, 917520, 4, 0, 917521, 536870916, 0, 917522, 536870916, 0, 917523, 536870916, 0, 917527, 4, 0, 917528, 4, 0, 917529, 4, 0, 917530, 4, 0, 917531, 4, 0, 917532, 4, 0, 917533, 4, 0, 983040, 4, 0, 983041, 4, 0, 983042, 4, 0, 983043, 4, 0, 983044, 536870916, 0, 983045, 4, 0, 983046, 4, 0, 983047, 4, 0, 983048, 4, 0, 983049, 4, 0, 983050, 4, 0, 983051, 4, 0, 983052, 4, 0, 983053, 4, 0, 983054, 4, 0, 983055, 4, 0, 983056, 4, 0, 983057, 4, 0, 983058, 4, 0, 983059, 536870916, 0, 983063, 4, 0, 983064, 4, 0, 983065, 4, 0, 983066, 4, 0, 983067, 4, 0, 983068, 4, 0, 983069, 4, 0, 1048576, 4, 0, 1048577, 4, 0, 1048578, 4, 0, 1048579, 4, 0, 1048580, 4, 0, 1048581, 4, 0, 1048582, 4, 0, 1048583, 4, 0, 1048584, 4, 0, 1048585, 4, 0, 1048586, 4, 0, 1048587, 4, 0, 1048588, 4, 0, 1048589, 4, 0, 1048590, 4, 0, 1048591, 4, 0, 1048592, 4, 0, 1048593, 536870916, 0, 1048594, 536870916, 0, 1048595, 536870916, 0, 1048599, 4, 0, 1048600, 4, 0, 1048601, 4, 0, 1048602, 4, 0, 1048603, 4, 0, 1048604, 4, 0, 1048605, 4, 0 )
+
+[node name="touch button" parent="." instance=ExtResource( 3 )]
+position = Vector2( -24, 73 )
+
+[node name="left" parent="touch button/VBoxContainer" index="0"]
+rotation = 0.140118
+
+[node name="right" parent="touch button/VBoxContainer" index="1"]
+position = Vector2( 429, 185 )
+rotation = -0.142129
+
+[node name="jump" parent="touch button/VBoxContainer" index="2"]
+scale = Vector2( 0.186991, -0.194654 )
+
+[node name="Player" type="Sprite" parent="."]
+position = Vector2( 776, 512 )
+scale = Vector2( 5.66797, 5.3125 )
+texture = ExtResource( 4 )
+hframes = 60
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "h"
+anims/h = SubResource( 1 )
+anims/r = SubResource( 2 )
+
+[node name="4" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.831433 )
+position = Vector2( 214, 814 )
+scale = Vector2( 0.545723, 0.381546 )
+texture = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="4"]
+margin_left = -280.746
+margin_top = -181.022
+margin_right = 329.254
+margin_bottom = 133.978
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0.854902, 0.219608, 0.219608, 1 )
+custom_constants/shadow_offset_x = 12
+custom_constants/line_spacing = 5
+text = "click to move left"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="5" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.765373 )
+position = Vector2( 675, 815 )
+scale = Vector2( 0.563368, 0.401438 )
+texture = ExtResource( 7 )
+flip_h = true
+
+[node name="Label" type="Label" parent="5"]
+margin_left = -257.761
+margin_top = -178.814
+margin_right = 352.239
+margin_bottom = 136.186
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0.854902, 0.219608, 0.219608, 1 )
+custom_constants/shadow_offset_x = 12
+custom_constants/line_spacing = 5
+text = "click to move right .  .  ."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="6" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.868509 )
+position = Vector2( 1691, 644 )
+scale = Vector2( 0.529044, 0.388087 )
+texture = ExtResource( 7 )
+flip_h = true
+
+[node name="Label" type="Label" parent="6"]
+margin_left = -274.274
+margin_top = -181.124
+margin_right = 335.726
+margin_bottom = 133.876
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0.854902, 0.219608, 0.219608, 1 )
+custom_constants/shadow_offset_x = 12
+custom_constants/line_spacing = 5
+text = "click to jump .  .  ."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="close_2" type="Button" parent="."]
+margin_left = 1752.0
+margin_top = 8.00003
+margin_right = 1912.0
+margin_bottom = 160.0
+rect_rotation = 15.0
+icon = ExtResource( 6 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="close_2" to="touch button" method="_on_close_2_pressed"]
+
+[editable path="touch button"]
