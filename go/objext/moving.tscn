@@ -1,0 +1,761 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://assets/coin.png" type="Texture" id=1]
+[ext_resource path="res://Music and Sounds/coin.wav" type="AudioStream" id=2]
+[ext_resource path="res://objext/coin.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "bounce"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("coin:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.659754, 2.2974 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -25.8166 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("coin:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("coin:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.984314, 0.976471, 0.976471, 1 ), Color( 0.976471, 0.686275, 0.686275, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "cir"
+length = 2.9
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Path2D2/PathFollow2D:unit_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../Path2D3/PathFollow2D:unit_offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../Path2D4/PathFollow2D:unit_offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../Path2D5/PathFollow2D:unit_offset")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("coin:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 0.933033, 0.68302 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -24.1329, -30.3065 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("coin:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.984314, 0.976471, 0.976471, 1 ), Color( 0.984314, 0.976471, 0.976471, 0.0627451 ) ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 32.6627
+
+[sub_resource type="Animation" id=5]
+resource_name = "bounce"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("coin:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.659754, 2.2974 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -25.8166 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("coin:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("coin:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.984314, 0.976471, 0.976471, 1 ), Color( 0.976471, 0.686275, 0.686275, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "fade"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("coin:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 0.933033, 0.68302 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -24.1329, -30.3065 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("coin:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.984314, 0.976471, 0.976471, 1 ), Color( 0.984314, 0.976471, 0.976471, 0.0627451 ) ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "bounce"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("coin:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.659754, 2.2974 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -25.8166 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("coin:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("coin:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.984314, 0.976471, 0.976471, 1 ), Color( 0.976471, 0.686275, 0.686275, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "fade"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("coin:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 0.933033, 0.68302 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -24.1329, -30.3065 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("coin:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.984314, 0.976471, 0.976471, 1 ), Color( 0.984314, 0.976471, 0.976471, 0.0627451 ) ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "bounce"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("coin:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.659754, 2.2974 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -25.8166 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("coin:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("coin:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.984314, 0.976471, 0.976471, 1 ), Color( 0.976471, 0.686275, 0.686275, 1 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "fade"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("coin:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 0.933033, 0.68302 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -24.1329, -30.3065 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("coin:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.984314, 0.976471, 0.976471, 1 ), Color( 0.984314, 0.976471, 0.976471, 0.0627451 ) ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "bounce"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("coin:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.659754, 2.2974 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -25.8166 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("coin:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("coin:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.984314, 0.976471, 0.976471, 1 ), Color( 0.976471, 0.686275, 0.686275, 1 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "fade"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("coin:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 0.933033, 0.68302 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -24.1329, -30.3065 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("coin:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.984314, 0.976471, 0.976471, 1 ), Color( 0.984314, 0.976471, 0.976471, 0.0627451 ) ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Curve2D" id=13]
+_data = {
+"points": PoolVector2Array( -6.31542, -212.804, 6.31542, 212.804, 276.131, 2.09243, 0, 0, 0, 0, 2.00718, 247.522, -4.21028, 193.841, 4.21028, -193.841, -258.213, 1.24996, 0, 0, 0, 0, -3.8527, -225.46, 0, -203.135, 0, 203.135, 277.183, 2.09242 )
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "hh"
+length = 6.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Path2D2/PathFollow2D:unit_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Path2D3/PathFollow2D:unit_offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Path2D4/PathFollow2D:unit_offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Path2D5/PathFollow2D:unit_offset")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[node name="moving" type="Node2D"]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="coin" type="Area2D" parent="."]
+position = Vector2( 252.879, -417.644 )
+rotation = 0.293054
+scale = Vector2( 2.01261, 2.01184 )
+collision_layer = 4
+script = ExtResource( 3 )
+
+[node name="coin" type="Sprite" parent="coin"]
+modulate = Color( 0.977337, 0.718328, 0.718328, 1 )
+position = Vector2( 0, -11.2673 )
+texture = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="coin"]
+autoplay = "cir"
+anims/bounce = SubResource( 1 )
+anims/cir = SubResource( 2 )
+anims/fade = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coin"]
+shape = SubResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="coin"]
+stream = ExtResource( 2 )
+pitch_scale = 0.94
+
+[node name="coin2" type="Area2D" parent="."]
+position = Vector2( 488.13, 10.177 )
+rotation = 1.34025
+scale = Vector2( 2.01261, 2.01184 )
+collision_layer = 4
+script = ExtResource( 3 )
+
+[node name="coin" type="Sprite" parent="coin2"]
+modulate = Color( 0.976894, 0.701915, 0.701915, 1 )
+position = Vector2( 0, -5.95083 )
+texture = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="coin2"]
+anims/bounce = SubResource( 5 )
+anims/fade = SubResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coin2"]
+shape = SubResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="coin2"]
+stream = ExtResource( 2 )
+pitch_scale = 0.94
+
+[node name="coin3" type="Area2D" parent="."]
+position = Vector2( -427.821, 235.252 )
+rotation = -2.32494
+scale = Vector2( 2.01261, 2.01184 )
+collision_layer = 4
+script = ExtResource( 3 )
+
+[node name="coin" type="Sprite" parent="coin3"]
+modulate = Color( 0.983655, 0.952092, 0.952092, 1 )
+position = Vector2( 0, -6.28165 )
+texture = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="coin3"]
+anims/bounce = SubResource( 7 )
+anims/fade = SubResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coin3"]
+shape = SubResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="coin3"]
+stream = ExtResource( 2 )
+pitch_scale = 0.94
+
+[node name="coin4" type="Area2D" parent="."]
+position = Vector2( -10.1754, 488.13 )
+rotation = 2.91104
+scale = Vector2( 2.01261, 2.01184 )
+collision_layer = 4
+script = ExtResource( 3 )
+
+[node name="coin" type="Sprite" parent="coin4"]
+modulate = Color( 0.982809, 0.920794, 0.920794, 1 )
+position = Vector2( 0, -13.4212 )
+texture = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="coin4"]
+anims/bounce = SubResource( 9 )
+anims/fade = SubResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coin4"]
+shape = SubResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="coin4"]
+stream = ExtResource( 2 )
+pitch_scale = 0.94
+
+[node name="coin5" type="Area2D" parent="."]
+position = Vector2( -235.252, -427.821 )
+rotation = -0.754147
+scale = Vector2( 2.01261, 2.01184 )
+collision_layer = 4
+script = ExtResource( 3 )
+
+[node name="coin" type="Sprite" parent="coin5"]
+modulate = Color( 0.977036, 0.707181, 0.707181, 1 )
+position = Vector2( 0, -7.75846 )
+texture = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="coin5"]
+anims/bounce = SubResource( 11 )
+anims/fade = SubResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coin5"]
+shape = SubResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="coin5"]
+stream = ExtResource( 2 )
+pitch_scale = 0.94
+
+[node name="Path2D" type="Path2D" parent="."]
+visible = false
+rotation = -0.261799
+scale = Vector2( 2.0131, 2.01135 )
+curve = SubResource( 13 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 174.963, -167.803 )
+rotation = 0.555243
+offset = 1353.49
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D/PathFollow2D"]
+position = Vector2( -0.0599976, -0.22702 )
+remote_path = NodePath("../../../coin")
+
+[node name="Path2D2" type="Path2D" parent="."]
+visible = false
+rotation = 0.785397
+scale = Vector2( 2.0131, 2.01135 )
+curve = SubResource( 13 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
+position = Vector2( 174.963, -167.803 )
+rotation = 0.555243
+offset = 1353.49
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D2/PathFollow2D"]
+position = Vector2( -0.0599976, -0.22702 )
+remote_path = NodePath("../../../coin2")
+
+[node name="Path2D3" type="Path2D" parent="."]
+visible = false
+rotation = 3.40339
+scale = Vector2( 2.0131, 2.01135 )
+curve = SubResource( 13 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D3"]
+position = Vector2( 174.963, -167.803 )
+rotation = 0.555243
+offset = 1353.49
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D3/PathFollow2D"]
+position = Vector2( -0.0599976, -0.22702 )
+remote_path = NodePath("../../../coin3")
+
+[node name="Path2D4" type="Path2D" parent="."]
+visible = false
+rotation = 2.35619
+scale = Vector2( 2.0131, 2.01135 )
+curve = SubResource( 13 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D4"]
+position = Vector2( 174.963, -167.803 )
+rotation = 0.555243
+offset = 1353.49
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D4/PathFollow2D"]
+position = Vector2( -0.0599976, -0.22702 )
+remote_path = NodePath("../../../coin4")
+
+[node name="Path2D5" type="Path2D" parent="."]
+visible = false
+rotation = -1.309
+scale = Vector2( 2.0131, 2.01135 )
+curve = SubResource( 13 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D5"]
+position = Vector2( 174.963, -167.803 )
+rotation = 0.555243
+offset = 1353.49
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D5/PathFollow2D"]
+position = Vector2( -0.0599976, -0.22702 )
+remote_path = NodePath("../../../coin5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "hh"
+anims/hh = SubResource( 14 )
+[connection signal="body_entered" from="coin" to="coin" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="coin2" to="coin2" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="coin3" to="coin3" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="coin4" to="coin4" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="coin5" to="coin5" method="_on_coin_body_entered"]
