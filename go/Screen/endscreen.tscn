@@ -1,0 +1,134 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://World/Tree.png" type="Texture" id=3]
+[ext_resource path="res://World/DirtTileset.png" type="Texture" id=4]
+[ext_resource path="res://World/GrassBackground.png" type="Texture" id=5]
+[ext_resource path="res://assets/montserrat_extrabold.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://screen/name.tscn" type="PackedScene" id=7]
+[ext_resource path="res://screen/endscreen.gd" type="Script" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=2]
+size = 38
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 53
+outline_size = 1
+font_data = ExtResource( 6 )
+
+[sub_resource type="AnimatedTexture" id=4]
+
+[sub_resource type="StyleBoxFlat" id=5]
+
+[sub_resource type="DynamicFont" id=6]
+size = 60
+outline_size = 1
+font_data = ExtResource( 6 )
+
+[node name="endscreen" type="Node"]
+script = ExtResource( 8 )
+
+[node name="GrassBackground" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 2
+flip_v = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DirtTileset" type="TextureRect" parent="GrassBackground"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" type="AnimatedSprite" parent="GrassBackground/DirtTileset"]
+position = Vector2( 6263.47, 1906.82 )
+scale = Vector2( 10.0982, 9.43639 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="Tree" type="Sprite" parent="GrassBackground/DirtTileset/Player"]
+position = Vector2( -588.398, -149.999 )
+scale = Vector2( 0.73579, 0.706122 )
+texture = ExtResource( 3 )
+
+[node name="name" parent="." instance=ExtResource( 7 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -519.396
+margin_top = -486.196
+margin_right = 677.604
+margin_bottom = -232.196
+text = "congratulation  you  finished the game !
+"
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -207.0
+margin_top = -296.0
+margin_right = 173.0
+margin_bottom = -195.0
+custom_fonts/font = SubResource( 2 )
+text = "Your score is  : %s
+You died times: %s"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play again" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -358.995
+margin_top = -125.361
+margin_right = 341.005
+margin_bottom = 74.6393
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.219608, 0.956863, 0.266667, 1 )
+custom_colors/font_color_hover = Color( 0.921569, 0.105882, 0.105882, 1 )
+text = "Play  again !"
+icon = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quit" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -358.995
+margin_top = 111.286
+margin_right = 342.005
+margin_bottom = 303.286
+custom_styles/pressed = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.317647, 0.894118, 0.341176, 1 )
+custom_colors/font_color_hover = Color( 0.933333, 0.0745098, 0.0745098, 1 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,528 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://screen/Title.tscn" type="PackedScene" id=1]
+[ext_resource path="res://screen/retry.tscn" type="PackedScene" id=2]
+[ext_resource path="res://screen/game.tscn" type="PackedScene" id=3]
+[ext_resource path="res://screen/quit.tscn" type="PackedScene" id=4]
+[ext_resource path="res://screen/paused.gd" type="Script" id=5]
+[ext_resource path="res://assets/montserrat_extrabold.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://auto/pngn/btn/pause.png" type="Texture" id=7]
+[ext_resource path="res://auto/pngn/pause/header.png" type="Texture" id=8]
+[ext_resource path="res://assets/coin.png" type="Texture" id=9]
+[ext_resource path="res://auto/pngn/pause/bg.png" type="Texture" id=10]
+[ext_resource path="res://auto/pngn/btn/restart.png" type="Texture" id=11]
+[ext_resource path="res://auto/pngn/btn/play.png" type="Texture" id=12]
+[ext_resource path="res://auto/pngn/btn/close.png" type="Texture" id=13]
+[ext_resource path="res://auto/pngn/pause/table.png" type="Texture" id=14]
+[ext_resource path="res://auto/pngn/level_select/close_2.png" type="Texture" id=15]
+[ext_resource path="res://auto/pngn/btn/ok.png" type="Texture" id=16]
+[ext_resource path="res://auto/pngn/you_lose/header.png" type="Texture" id=17]
+[ext_resource path="res://auto/pngn/upgrade/heart.png" type="Texture" id=18]
+[ext_resource path="res://UI/HeartUIEmpty.png" type="Texture" id=19]
+
+[sub_resource type="DynamicFont" id=1]
+size = 46
+font_data = ExtResource( 6 )
+
+[sub_resource type="Theme" id=2]
+
+[sub_resource type="AnimatedTexture" id=3]
+
+[sub_resource type="Animation" id=4]
+resource_name = "menu 2"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("menu:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.2, 0.2 ), Vector2( 0.5, 0.5 ), Vector2( 0.7, 0.7 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("menu:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 6.10352e-05, 1096 ), Vector2( 103.181, 772.914 ), Vector2( 302.742, 557.873 ), Vector2( 560, 208 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("menu:modulate")
+tracks/2/interp = 2
+tracks/2/loop_wrap = false
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.647059 ), Color( 1, 1, 1, 0.545098 ), Color( 1, 1, 1, 0.729412 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("menu:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=5]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect/Title:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.97, 0.97 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect/Title/Resume:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 19.02, 241.127 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect/Title/retry:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 147.02, 241.127 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ColorRect/Title/quit:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 275.02, 241.127 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ColorRect/Title/Resume:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("ColorRect/header:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("menu:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.0625017 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "q"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect/header:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect/Title/quit:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 235.447, 239 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect/Title/retry:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 75.02, 239 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ColorRect/Title/Resume:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ColorRect/header:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("menu:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("menu:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.929412 ), Color( 1, 1, 1, 0.780392 ), Color( 1, 1, 1, 0.647059 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("menu:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.7, 0.7 ), Vector2( 0.5, 0.5 ), Vector2( 0.2, 0.2 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("menu:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 560, 208 ), Vector2( 302, 537 ), Vector2( 103, 772 ), Vector2( 6.10352e-05, 1096 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("menu:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="DynamicFont" id=8]
+size = 77
+outline_size = 1
+outline_color = Color( 0.796078, 0.054902, 0.054902, 1 )
+font_data = ExtResource( 6 )
+
+[node name="paused" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 16.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -440.0
+margin_top = 48.0
+margin_right = -317.0
+margin_bottom = 105.0
+custom_fonts/font = SubResource( 1 )
+text = " %s"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.239216 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="ColorRect" instance=ExtResource( 1 )]
+anchor_left = 0.0
+anchor_right = 0.0
+margin_left = 740.98
+margin_top = 318.873
+margin_right = 1177.98
+margin_bottom = 393.873
+text = "paused"
+uppercase = false
+
+[node name="bg" type="TextureRect" parent="ColorRect/Title"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.09686
+margin_top = 1.1557
+margin_right = 3.09686
+margin_bottom = 399.156
+rect_scale = Vector2( 0.957474, 0.957474 )
+texture = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="header" type="TextureRect" parent="ColorRect/Title"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -503.48
+margin_top = -204.373
+margin_right = 499.52
+margin_bottom = 191.627
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume" parent="ColorRect/Title" instance=ExtResource( 3 )]
+visible = false
+margin_left = 19.02
+margin_top = 241.127
+margin_right = 134.02
+margin_bottom = 347.127
+icon = ExtResource( 12 )
+expand_icon = true
+script = null
+
+[node name="retry" parent="ColorRect/Title" instance=ExtResource( 2 )]
+margin_left = 75.02
+margin_top = 239.0
+margin_right = 190.02
+margin_bottom = 345.0
+text = ""
+icon = ExtResource( 11 )
+expand_icon = true
+script = null
+
+[node name="quit" parent="ColorRect/Title" instance=ExtResource( 4 )]
+margin_left = 235.447
+margin_top = 239.0
+margin_right = 350.447
+margin_bottom = 345.0
+text = ""
+icon = ExtResource( 13 )
+expand_icon = true
+
+[node name="pm" type="VBoxContainer" parent="ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1040.0
+margin_top = 52.0
+margin_right = -856.0
+margin_bottom = 807.0
+rect_rotation = -90.0
+size_flags_stretch_ratio = 1.53
+theme = SubResource( 2 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="header" type="Sprite" parent="ColorRect"]
+position = Vector2( 962.409, 341.516 )
+texture = ExtResource( 17 )
+
+[node name="paused" type="TouchScreenButton" parent="."]
+position = Vector2( 1725.91, 32 )
+rotation = 6.28319
+scale = Vector2( 0.674438, 0.579381 )
+normal = ExtResource( 7 )
+pressed = SubResource( 3 )
+
+[node name="coin" type="Sprite" parent="."]
+position = Vector2( 1424, 72 )
+texture = ExtResource( 9 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "p1"
+anims/menu = SubResource( 4 )
+anims/p1 = SubResource( 5 )
+anims/q = SubResource( 6 )
+anims/rm = SubResource( 7 )
+
+[node name="menu" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0.647059 )
+margin_left = 6.10352e-05
+margin_top = 1096.0
+margin_right = 824.0
+margin_bottom = 1650.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="menu"]
+anchor_left = 0.495
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -327.88
+margin_top = -166.127
+margin_right = 380.0
+margin_bottom = 26.873
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.0980392, 0.0980392, 0.0980392, 1 )
+custom_colors/font_outline_modulate = Color( 0.796078, 0.109804, 0.109804, 1 )
+text = "Do you want to go Main menu?"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="y" type="Button" parent="menu"]
+margin_left = 80.0
+margin_top = 366.223
+margin_right = 306.0
+margin_bottom = 587.223
+icon = ExtResource( 16 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="no" type="Button" parent="menu"]
+margin_left = 589.848
+margin_top = 342.703
+margin_right = 823.848
+margin_bottom = 563.703
+rect_rotation = 22.8
+icon = ExtResource( 15 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HeartUIEmpty" type="Sprite" parent="."]
+position = Vector2( 61.2001, 48 )
+scale = Vector2( 4.94999, 5.81818 )
+texture = ExtResource( 19 )
+
+[node name="heart2" type="Sprite" parent="HeartUIEmpty"]
+scale = Vector2( 0.0815217, 0.0635838 )
+texture = ExtResource( 18 )
+
+[node name="HeartUIEmpty2" type="Sprite" parent="."]
+position = Vector2( 158.4, 48 )
+scale = Vector2( 4.94999, 5.81818 )
+texture = ExtResource( 19 )
+
+[node name="heart2" type="Sprite" parent="HeartUIEmpty2"]
+scale = Vector2( 0.0815217, 0.0635838 )
+texture = ExtResource( 18 )
+
+[node name="HeartUIEmpty3" type="Sprite" parent="."]
+position = Vector2( 260.574, 48 )
+scale = Vector2( 4.94999, 5.81818 )
+texture = ExtResource( 19 )
+
+[node name="heart2" type="Sprite" parent="HeartUIEmpty3"]
+scale = Vector2( 0.0815217, 0.0635838 )
+texture = ExtResource( 18 )
+[connection signal="button_up" from="ColorRect/Title/Resume" to="." method="_on_Resume_button_up"]
+[connection signal="button_up" from="ColorRect/Title/retry" to="." method="_on_retry_button_up"]
+[connection signal="pressed" from="ColorRect/Title/quit" to="." method="_on_quit_pressed"]
+[connection signal="released" from="paused" to="." method="_on_paused_released"]
+[connection signal="pressed" from="menu/y" to="." method="_on_y_pressed"]
+[connection signal="pressed" from="menu/no" to="." method="_on_no_pressed"]

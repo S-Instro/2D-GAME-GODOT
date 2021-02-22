@@ -1,0 +1,249 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://assets/749.jpg" type="Texture" id=1]
+[ext_resource path="res://assets/play.png" type="Texture" id=2]
+[ext_resource path="res://auto/pngn/btn/close.png" type="Texture" id=3]
+[ext_resource path="res://assets/montserrat_extrabold.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://auto/pngn/btn/about.png" type="Texture" id=5]
+[ext_resource path="res://auto/pngn/btn/settings.png" type="Texture" id=6]
+[ext_resource path="res://screen/Title.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/exi.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui_theme.tres" type="Theme" id=9]
+[ext_resource path="res://screen/Main .gd" type="Script" id=10]
+[ext_resource path="res://assets/yes.png" type="Texture" id=11]
+[ext_resource path="res://assets/no.png" type="Texture" id=12]
+[ext_resource path="res://Music and Sounds/Jungle trail bpm90 C Example Background.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/coin.png" type="Texture" id=14]
+
+[sub_resource type="DynamicFont" id=1]
+size = 88
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=2]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Play:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 2.0, -1.5 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Play:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.00257349, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.22, 0.2 ), Vector2( 0.28, 0.22 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Popup/exi:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 634.338, -302.076 ), Vector2( 634, 120.78 ), Vector2( 634, 321 ), Vector2( 634, 449.367 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Popup/exi:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 634, 450 ), Vector2( 634, 321 ), Vector2( 634, 120 ), Vector2( 634, -300 ) ]
+}
+
+[sub_resource type="AnimatedTexture" id=5]
+
+[sub_resource type="DynamicFont" id=6]
+size = 35
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 46
+font_data = ExtResource( 4 )
+
+[node name="Main " type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GrassBackground" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="." instance=ExtResource( 7 )]
+margin_left = -328.744
+margin_top = 698.0
+margin_right = 378.256
+margin_bottom = 939.0
+theme = ExtResource( 9 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.960784, 0.937255, 0.937255, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 12
+custom_constants/line_spacing = 18
+custom_constants/shadow_offset_y = 11
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/name = SubResource( 2 )
+anims/pop = SubResource( 3 )
+anims/pull = SubResource( 4 )
+
+[node name="quit" type="TouchScreenButton" parent="."]
+position = Vector2( 1696, 28.3162 )
+scale = Vector2( 0.691589, 0.637209 )
+normal = ExtResource( 3 )
+
+[node name="Play" type="TouchScreenButton" parent="."]
+position = Vector2( 881.478, 411.183 )
+rotation = 0.0349066
+scale = Vector2( 0.220307, 0.200102 )
+normal = ExtResource( 2 )
+pressed = SubResource( 5 )
+shape_centered = false
+shape_visible = false
+
+[node name="Popup" type="Popup" parent="."]
+margin_left = 330.841
+margin_right = 1338.84
+margin_bottom = 321.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exi" type="Sprite" parent="Popup"]
+position = Vector2( 634, 450 )
+scale = Vector2( 0.829973, 0.837294 )
+texture = ExtResource( 8 )
+
+[node name="no" type="TextureButton" parent="Popup/exi"]
+margin_left = 78.1365
+margin_top = 107.708
+margin_right = 1719.14
+margin_bottom = 1156.71
+rect_scale = Vector2( 0.2, 0.2 )
+texture_normal = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="yes" type="TextureButton" parent="Popup/exi"]
+modulate = Color( 0.972549, 0.94902, 0.94902, 1 )
+margin_left = -417.902
+margin_top = 111.872
+margin_right = 1223.1
+margin_bottom = 1160.87
+rect_rotation = 6.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="about" type="Button" parent="."]
+margin_left = 1696.0
+margin_top = 336.0
+margin_right = 1846.0
+margin_bottom = 486.0
+icon = ExtResource( 5 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="setting" type="Button" parent="."]
+margin_left = 1696.0
+margin_top = 175.479
+margin_right = 1846.0
+margin_bottom = 325.479
+icon = ExtResource( 6 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="main" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = 6.0
+pitch_scale = 0.77
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+volume_db = 6.0
+pitch_scale = 0.77
+
+[node name="coin" type="Sprite" parent="."]
+position = Vector2( 118.942, 93.4617 )
+scale = Vector2( 1.46441, 1.2698 )
+texture = ExtResource( 14 )
+
+[node name="X" type="Label" parent="coin"]
+margin_left = 43.0155
+margin_top = -16.4698
+margin_right = 83.0155
+margin_bottom = 30.5302
+custom_fonts/font = SubResource( 6 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SCORE" type="Label" parent="coin"]
+margin_left = 77.2038
+margin_top = -23.2018
+margin_right = 155.204
+margin_bottom = 43.7982
+custom_fonts/font = SubResource( 7 )
+text = "%s"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Popup/exi/no" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="Popup/exi/yes" to="." method="_on_yes_pressed"]
+[connection signal="mouse_entered" from="about" to="." method="_on_about_mouse_entered"]
+[connection signal="mouse_exited" from="about" to="." method="_on_about_mouse_exited"]
+[connection signal="pressed" from="about" to="." method="_on_about_pressed"]
+[connection signal="mouse_entered" from="setting" to="." method="_on_setting_mouse_entered"]
+[connection signal="mouse_exited" from="setting" to="." method="_on_setting_mouse_exited"]
+[connection signal="pressed" from="setting" to="." method="_on_setting_pressed"]

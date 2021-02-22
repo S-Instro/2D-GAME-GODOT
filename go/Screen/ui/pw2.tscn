@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/749.jpg" type="Texture" id=1]
+[ext_resource path="res://assets/montserrat_extrabold.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://screen/ui/plwait.gd" type="Script" id=3]
+[ext_resource path="res://screen/Main .tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 56
+outline_size = 5
+outline_color = Color( 0.0588235, 0.054902, 0.054902, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "new"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "Please wait . ", "Please wait . . ", "Please wait . . ." ]
+}
+
+[node name="pw2" type="Node2D"]
+
+[node name="plwait" type="Control" parent="."]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+next_scene = ExtResource( 4 )
+
+[node name="749" type="TextureRect" parent="plwait"]
+modulate = Color( 0.588235, 0.615686, 0.513726, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1917.0
+margin_bottom = 1081.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="plwait"]
+process_mode = 0
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="Label" type="Label" parent="plwait"]
+margin_left = 695.282
+margin_top = 488.919
+margin_right = 1136.28
+margin_bottom = 578.919
+custom_fonts/font = SubResource( 1 )
+text = "Please wait . "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="plwait"]
+anims/new = SubResource( 2 )
+[connection signal="timeout" from="plwait/Timer" to="plwait" method="_on_Timer_timeout"]

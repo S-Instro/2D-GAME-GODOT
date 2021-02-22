@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/font_default.tres" type="DynamicFont" id=1]
+
+[node name="name" type="Label"]
+margin_left = 73.0
+margin_top = 24.0
+margin_right = 401.0
+margin_bottom = 262.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.647059, 0.564706, 0.188235, 1 )
+text = "INSTRO KILLER
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
