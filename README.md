@@ -1,15 +1,19 @@
 # 2D-GAME-GODOT
 
-This is a game based on 2 Dimensional This game is properly made for android device 
+**This is a game based on 2 Dimensional This game is properly made for android device 
 In this game we have the actor or player who plays the game  
-In this game in we have the levels we have to complete the levels In this there are lots of  difficulties  which player has to pass and the end the level
+In this game in we have the levels we have to complete the levels In this there are lots of  difficulties  which player has to pass and the end the level** 
 
 
-Advantages:
+
+## Advantages:
+
 In this game we are adding the new coins which player has to get with the help coins the power will depend
 We have the different energies which we have to get 
 New carrier are added with help of that carrier player can fast his journey through the levels
-Disadvantage:
+
+
+## Disadvantage:
 This is an 2d games so we do not have the graphics like a 4d games
 Runners have the limitation of level
 
