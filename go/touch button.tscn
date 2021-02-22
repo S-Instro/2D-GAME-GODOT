@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/exit.png" type="Texture" id=1]
+[ext_resource path="res://touch button.gd" type="Script" id=3]
+[ext_resource path="res://assets/slide.png" type="Texture" id=4]
+[ext_resource path="res://assets/lslide.png" type="Texture" id=5]
+
+[sub_resource type="AnimatedTexture" id=1]
+
+[sub_resource type="AtlasTexture" id=2]
+
+[sub_resource type="ImageTexture" id=3]
+
+[sub_resource type="ShaderMaterial" id=4]
+
+[sub_resource type="LargeTexture" id=5]
+
+[node name="touch button" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 104.0
+margin_top = 680.0
+margin_right = 1866.0
+margin_bottom = 1016.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="left" type="TouchScreenButton" parent="VBoxContainer"]
+position = Vector2( 35, 162 )
+scale = Vector2( 0.218845, 0.188976 )
+normal = ExtResource( 5 )
+pressed = SubResource( 1 )
+
+[node name="right" type="TouchScreenButton" parent="VBoxContainer"]
+position = Vector2( 315, 170 )
+rotation = 4.44253e-06
+scale = Vector2( 0.2, 0.2 )
+normal = ExtResource( 4 )
+pressed = SubResource( 2 )
+
+[node name="jump" type="TouchScreenButton" parent="VBoxContainer"]
+position = Vector2( 1594.36, 101.049 )
+rotation = 1.5708
+scale = Vector2( 0.173795, -0.21068 )
+normal = ExtResource( 5 )
+pressed = SubResource( 3 )
+
+[node name="kill" type="TouchScreenButton" parent="VBoxContainer"]
+material = SubResource( 4 )
+position = Vector2( 1516.76, 280.216 )
+rotation = -1.57079
+scale = Vector2( 0.206914, -0.226905 )
+normal = ExtResource( 1 )
+pressed = SubResource( 5 )
+[connection signal="pressed" from="VBoxContainer/left" to="." method="_on_left_pressed"]
+[connection signal="released" from="VBoxContainer/left" to="." method="_on_left_released"]
+[connection signal="pressed" from="VBoxContainer/right" to="." method="_on_right_pressed"]
+[connection signal="released" from="VBoxContainer/right" to="." method="_on_right_released"]
+[connection signal="pressed" from="VBoxContainer/jump" to="." method="_on_jump_pressed"]
+[connection signal="released" from="VBoxContainer/jump" to="." method="_on_jump_released"]
+[connection signal="pressed" from="VBoxContainer/kill" to="." method="_on_kill_pressed"]
+[connection signal="released" from="VBoxContainer/kill" to="." method="_on_kill_released"]
