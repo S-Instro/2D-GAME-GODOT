@@ -3,6 +3,8 @@
 This is a game based on 2 Dimensional This game is properly made for android device 
 In this game we have the actor or player who plays the game  
 In this game in we have the levels we have to complete the levels In this there are lots of  difficulties  which player has to pass and the end the level
+
+
 Advantages:
 In this game we are adding the new coins which player has to get with the help coins the power will depend
 We have the different energies which we have to get 
@@ -10,6 +12,7 @@ New carrier are added with help of that carrier player can fast his journey thro
 Disadvantage:
 This is an 2d games so we do not have the graphics like a 4d games
 Runners have the limitation of level
+
 
 	FEASIBILITY STUDY
 The feasibility analysis. This section verified that it is feasible  to add game on the Android System from the aspects of Technical, Economical, Organizational and Cultural feasibility. 
@@ -34,7 +37,7 @@ Cultural Feasibility :- 
 • As now internet almost reaches every corner of the  world which will allow almost every user of any age  having access to this application. 
 • User can download and play the game offline 
 • There is zero profit margin with this application as it  is free for users to download. 
-
+
 
 
 ✓ Software Requirements :- 
