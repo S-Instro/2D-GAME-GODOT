@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/PNG/frame-1.png" type="Texture" id=1]
+[ext_resource path="res://assets/PNG/frame-2.png" type="Texture" id=2]
+[ext_resource path="res://actor/enemy2.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 48.5975, 39.1715 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "e2",
+"speed": 5.14
+} ]
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 9.39306
+
+[node name="enemy2" type="KinematicBody2D"]
+position = Vector2( 0, -43.1892 )
+scale = Vector2( 1, 0.92 )
+collision_layer = 2
+collision_mask = 2147483653
+script = ExtResource( 3 )
+speed = Vector2( 140, 500 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+visible = false
+position = Vector2( 0, 0.719639 )
+scale = Vector2( 5.05879, 4.62541 )
+process_parent = true
+physics_process_parent = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 6.77858 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.274189, 0.246799 )
+frames = SubResource( 2 )
+animation = "e2"
+
+[node name="hurtbox" type="Area2D" parent="."]
+position = Vector2( 0, 0.719639 )
+scale = Vector2( 5.05879, 4.62541 )
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2( 0, 1.30993 )
+shape = SubResource( 3 )
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
