@@ -58,4 +58,6 @@ Cultural Feasibility :- 
     ❖ 4GB (minimum) 
     ❖ 8GB (recommended) 
     ❖ 12GB and more for Best Experience.
+    
+    <img src="image/Screenshot_20201120-095609.png" >
 
