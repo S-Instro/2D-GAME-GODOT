@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Jungle trail bpm90 C Example Background.wav-c84439eaf8be87e519da981c37abf713.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/Jungle trail bpm90 C Example Background.wav"
+dest_files=[ "res://.import/Jungle trail bpm90 C Example Background.wav-c84439eaf8be87e519da981c37abf713.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop=true
+compress/mode=0
